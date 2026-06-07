@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'media.dart';
+import 'resultado.dart';
 
 void main(){
     double nota1 = 0;
@@ -13,6 +14,9 @@ void main(){
     print("Digite a terceira nota: ");
     nota3 = double.parse(stdin.readLineSync()!);
 
-    double media = mediaNotas(nota1, nota2, nota3);
-    print("A média das notas é: $media");
-}
+    String mediaFormatada = mediaNotas(nota1, nota2, nota3).toStringAsFixed(2);
+    print("A média das notas é: $mediaFormatada");
+
+    String resultadoFinal = resultado(mediaNotas(nota1, nota2, nota3));
+    print("O resultado é: $resultadoFinal");
+}   
